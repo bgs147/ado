@@ -1,0 +1,24 @@
+int LED=9;
+int BUZ=8;
+void setup() {
+  pinMode(PIR, INPUT);
+  pinMode(LED,OUTPUT);
+  pinMode(BUZ,OUTPUT);
+  Serial.begin(9600);
+  Serial.println("start...");  
+}
+
+void loop() 
+{
+  if(digitalRead(PIR)==HIGH)
+  {
+    digitalWrite(LED, HIGH);
+    digitalWrite(BUZ, HIGH);
+  }
+  else
+  {
+    digitalWrite(LED, LOW);
+    digitalWrite(BUZ, LOW);
+    delay(100);
+  }
+}
