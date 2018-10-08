@@ -1,0 +1,21 @@
+#define pin_buzz 8
+void setup() {
+  Serial.begin(9600);
+  pinMode(pin_buzz, OUTPUT);
+}
+
+void loop() 
+{
+  int d=analogRead(A0);
+  Serial.println(d);
+  if(d<=30)
+  {
+    digitalWrite(pin_buzz, HIGH);
+  }
+  else
+  {
+    digitalWrite(pin_buzz, LOW);
+  }
+  delay(200);
+
+}
